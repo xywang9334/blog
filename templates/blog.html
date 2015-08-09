@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<!-- blog input html -->
+<html>
+	<head>
+		<title>{{username}}'s blog</title>
+		<link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+	</head>
+
+	<hr>
+
+	<body>
+		<form method="post">
+			<div style="
+			font-family: -webkit-body;
+  		font-size: 30px;">Start Your New Blog, {{username}}</div>
+			<br><br>
+			<input class="classic" type="text" name="title" value={{title}}>
+			<input type="submit" value="see my blogs" name="see" style="float: right;">
+			<br><hr><br>
+			<textarea name="blog">{{blog}}</textarea>
+			<div class="error">{{error}}</div>
+			<input type="submit">
+			<input type="submit" value="logout" name="logout" style="float: right;">
+		</form>
+
+	</body>
+
+</html>

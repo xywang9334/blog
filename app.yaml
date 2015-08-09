@@ -1,0 +1,25 @@
+application: singular-facet-96813
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+- url: /stylesheets
+  static_dir: stylesheets
+- url: /image
+  static_dir: image
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
+- name: markupsafe
+  version: latest

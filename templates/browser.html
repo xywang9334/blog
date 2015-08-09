@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<!-- blog browse html -->
+<html>
+
+<head>
+    <title>{{username}}'s blog</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+    <!-- font link -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap.mini.css">
+    <script src="/script/facebookapi.js"></script>
+</head>
+
+<hr>
+
+<body>
+    <form method="post">
+        <div class="TagnerineFont">All blogs, {{username}}</div>
+        <hr>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/browse">Home</a>
+                </li>
+                <li>
+                    <a href="/blog">Write Blogs</a>
+                </li>
+                <li>
+                    <a href="/">Log Out</a>
+                </li>
+                <li>
+                    <a href="/contact">Contact</a>
+                </li>
+                <li>
+                    <a href="/location">Location</a>
+                </li>
+            </ul>
+        </nav>
+        <img src="../image/grey.jpg" alt="grey" style="width:100%;height:300px;">
+        <hr>
+        <br>
+        <br>
+        <br> {% for blogs in b %}
+        <div class="blogs">
+            <div class="post-heading">
+                <div class="post-title">
+                    {{blogs.title}}
+                </div>
+                <div>
+                  <type="submit" name="like" value="like">
+                </div>
+                <div class="post-date">
+                    {{blogs.created.strftime("%b %d, %Y")}}
+                </div>
+            </div>
+            <pre class="blog-body" wrap="hard">{{blogs.text}}</pre>
+            <input type="submit" name="like" value="like" onclick="script/facebookapi.js">
+            <hr>
+        </div>
+        {% endfor %}
+    </form>
+
+</body>
+
+</html>
