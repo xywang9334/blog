@@ -27,6 +27,7 @@ import logging
 
 
 from google.appengine.api import memcache
+from google.appengine.ext import db
 
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
